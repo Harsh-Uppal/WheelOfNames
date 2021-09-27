@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wheel of Names</title>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+    <main></main>
+    <script src="p5.min.js"></script>
+    <script src="WheelOfNames.js"></script>
+    <script src="script.js"></script>
+
+    <button class="SpinBtn" onclick="Spin()">Spin</button>
+    
+    <ul class="DivisionsInputContainer">
+        <li><label class="NumHeader">Number of divisions</label></li>
+        <li><input id="divNumInput" type="number" onkeyup="DivisionsNumChanged()" onchange="DivisionsNumChanged()"/></li>
+    </ul>
+
+    <ul id="divNamesList" class="InputList"></ul>
+
+    <div id="ChosenShower" class="ChosenShower">
+        <div id="ChosenText" class="ChosenText">A got selected</div>
+        <button class="OkBtn" onclick ="OkBtnClick()">Ok</button>
+    </div>
+</body>
+
+</html>

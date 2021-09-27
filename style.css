@@ -1,0 +1,99 @@
+.p5Canvas{
+    margin-top: -8px;
+    margin-left: -8px;
+}
+
+body{
+    background-color: black;
+}
+
+.SpinBtn{
+    border-radius: 10px;
+    border-style: none;
+    border: solid;
+    padding:9px 9%;
+    margin: .5% 0 0 0;
+    transition:.4s;
+    font-size:12px;
+    border-color:green;
+}
+
+.SpinBtn:hover{
+    padding:10px 10%;
+    font-size:13px;
+    border-radius:15px;
+}
+
+.SpinBtn:active{
+    background-color: gray;
+}
+
+input[type ='number']{
+    width:20%;
+    font-size: 20%;
+}
+
+input[type = "text"]{
+    width:80%;
+    margin-bottom: 0;
+    border-width: 2px;
+    border:solid;
+    border-color:gray;
+    font-family:'Consolas';
+    font-weight: bold;
+}
+
+.NumHeader{
+    color:white;
+    font-size:8px;
+    font-family: 'Consolas';
+    font-weight: bold;
+    margin-top:-20%;
+    margin-bottom:-100%;
+    margin:0 0 0 0;
+}
+
+.DivisionsInputContainer{
+    margin-top:-40px;
+    margin-left:20%;
+}
+
+.InputList{
+    margin-top:-200px;
+    margin-left:60%;
+    position:absolute;
+    z-index: 2;
+}
+
+.ChosenShower{
+    z-index:index 3;
+    position: absolute;
+    width:30%;
+    height:20%;
+    border-radius: 5px;
+    background-color: white;
+    margin:-30% 35% 35% 35%;
+    display: none;
+}
+
+.ChosenText{
+    margin:10px 10px 0 10px;
+    text-align: center;
+    font-family: Consolas;
+    font-size: 10px;
+}
+
+.OkBtn{
+    border-radius: 0 0 5px 5px;
+    color:black;
+    width:100%;
+    height:35%;
+    font-size: 8px;
+    border:none;
+    margin:10% 0 0 0;
+    background-color:blanchedalmond;
+}
+
+.OkBtn:active{
+    background-color: cornsilk;
+}
