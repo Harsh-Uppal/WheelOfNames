@@ -4,7 +4,7 @@ let nams = [];
 let divNumInput, divNamesList, selectedShower, selectedShowerText;
 
 function preload() {
-    arrowImg = loadImage('Assets/Arrow.png');
+    arrowImg = loadImage('Arrow.png');
 }
 
 function setup() {
