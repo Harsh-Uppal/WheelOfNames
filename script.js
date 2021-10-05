@@ -4,11 +4,11 @@ let nams = [];
 let divNumInput, divNamesList, selectedShower, selectedShowerText;
 
 function preload() {
-    arrowImg = loadImage('Arrow.png');
+    arrowImg = loadImage('Assets/Arrow.png');
 }
 
 function setup() {
-    createCanvas(window.innerWidth * 6 / 10, 150);
+    createCanvas(window.innerWidth * 6 / 10, 450);
 
     divNumInput = document.getElementById('divNumInput');
     divNamesList = document.getElementById('divNamesList');
@@ -31,18 +31,7 @@ function draw() {
     background(0);
     won.Display(255, 'lime');
     won.UpdateRotation();
-    image(arrowImg, won.pos.x + won.scale / 2 + width / 10, won.pos.y, 30, 25);
-    // if (won.angularVelocity < .001 && won.angularVelocity != 0) {
-    //     won.angularVelocity = 0;
-
-    //     if (won.divisions > 0) {
-    //         let ind = Math.floor(won.rotation / (360 / won.divisions)) - 1 - Math.ceil(won.divisions / 2);
-    //         if(ind < 0)
-    //             ind = won.division - ind;
-    //         selectedShowerText.innerHTML = nams[ind] + ' got selected';
-    //         selectedShower.style.display = '';
-    //     }
-    // }
+    image(arrowImg, won.pos.x + won.scale / 2 + width / 10, won.pos.y, 80, 70);
 }
 
 function Spin() {
@@ -53,22 +42,21 @@ function DivisionsNumChanged() {
     divNamesList.innerHTML = '';
 
     for (let i = 0; i < divNumInput.value; i++) {
-        let element = document.createElement('li');
         let inpElement = document.createElement('input');
 
         inpElement.setAttribute('type', 'text');
         inpElement.setAttribute('onkeyup', 'DivisionChanged()');
         inpElement.setAttribute('id', 'Inp ' + i);
 
-        divNamesList.appendChild(element);
-        element.appendChild(inpElement);
+        divNamesList.appendChild(inpElement);
 
         nams[i] = '';
     }
 
     won.names = nams;
-    won.divisions = divNumInput.value;
+    won.divs = divNumInput.value;
     won.SetupDivisions();
+    won.SetupTexts();
     won.LoadAutoTextScale();
 }
 

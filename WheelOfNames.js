@@ -8,7 +8,7 @@ class WON {
 
         this.pos = { x: x, y: y };
         this.scale = scale;
-        this.divisions = divisions;
+        this.divs = divisions;
         this.names = names;
         this.angularVelocity = angularVelocity;
         this.rotation = 0;
@@ -18,35 +18,38 @@ class WON {
     }
 
     SetupDivisions() {
-        this.lines = [], this.texts = [];
-        for (let i = 0; i < this.divisions; i++) {
-            this.lines[i] = {
-                x2: sin(TWO_PI / this.divisions * i) * this.scale / 2,
-                y2: cos(TWO_PI / this.divisions * i) * this.scale / 2
-            };
-        }
+        let anglePerDiv = TWO_PI / this.divs, hDivs = (this.divs / 2) + 1;
 
+        this.lines = [];
+        for (let i = 0; i < this.divs; i++)
+            this.lines[i] = {
+                x2: sin(TWO_PI / this.divs * i) * this.scale / 2,
+                y2: cos(TWO_PI / this.divs * i) * this.scale / 2
+            };
+
+        for (let i = 0; i < this.divs; i++) {
+            let a1 = (hDivs - i) * anglePerDiv;
+            let a2 = (hDivs + 1 - i) * anglePerDiv;
+        }
         this.SetupTexts();
     }
 
     SetupTexts() {
         //PI = 180 degree
 
-        let anglePerDiv = PI / this.divisions;
-        let TWO_PIPerDiv = TWO_PI / this.divisions;
+        let anglePerDiv = PI / this.divs;
+        let TWO_PIPerDiv = TWO_PI / this.divs;
 
         this.texts = [];
-        for (let i = 0; i < this.divisions; i++) {
-            let textX = sin(TWO_PI / this.divisions * (i - .5)) * this.scale / 4;
-            let textY = cos(TWO_PI / this.divisions * (i - .5)) * this.scale / 4;
+        for (let i = 0; i < this.divs; i++) {
+            let textX = sin(TWO_PI / this.divs * (i - .5)) * this.scale / 4;
+            let textY = cos(TWO_PI / this.divs * (i - .5)) * this.scale / 4;
 
             this.texts.push({
                 x: textX, y: textY, text: this.names[i],
-                rotation:anglePerDiv - TWO_PIPerDiv * i + HALF_PI
+                rotation: anglePerDiv - TWO_PIPerDiv * i + HALF_PI,
+                angle: TWO_PI / this.divs * (i - .5)
             });
-
-            if(i == 0)
-                this.p = {x:textX, y:textY};
         }
     }
 
@@ -82,6 +85,7 @@ class WON {
     UpdateRotation() {
         this.rotation += this.angularVelocity;
         this.angularVelocity *= .99;
+        this.rotation %= TWO_PI;
     }
 
     Display(lineColor, textColor, tSize) {
