@@ -11,9 +11,9 @@
 
 <body>
     <main></main>
-    <script src="p5.min.js"></script>
-    <script src="WheelOfNames.js"></script>
-    <script src="script.js"></script>
+    <script src="Scripts/p5.min.js"></script>
+    <script src="Scripts/WheelOfNames.js"></script>
+    <script src="Scripts/script.js"></script>
 
     <button class="SpinBtn" onclick="Spin()">Spin</button>
     
@@ -22,10 +22,10 @@
         <li><input id="divNumInput" type="number" onkeyup="DivisionsNumChanged()" onchange="DivisionsNumChanged()"/></li>
     </ul>
 
-    <ul id="divNamesList" class="InputList"></ul>
+    <div id="divNamesList" class="InputList"></div>
 
-    <div id="ChosenShower" class="ChosenShower">
-        <div id="ChosenText" class="ChosenText">A got selected</div>
+    <div id="ChosenShower" class="ChosenShower" style="display:none;">
+        <div id="ChosenText" class="ChosenText"></div>
         <button class="OkBtn" onclick ="OkBtnClick()">Ok</button>
     </div>
 </body>

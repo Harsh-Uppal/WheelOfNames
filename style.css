@@ -5,23 +5,27 @@
 
 body{
     background-color: black;
+    font-family: 'Consolas';
+    font-weight: bold;
 }
 
 .SpinBtn{
-    border-radius: 10px;
+    border-radius: 15px;
+    font-family: inherit;
+    font-weight: inherit;
     border-style: none;
     border: solid;
-    padding:9px 9%;
-    margin: .5% 0 0 0;
+    padding:19px 9%;
+    margin: 3.5% 0 0 0;
     transition:.4s;
-    font-size:12px;
+    font-size:25px;
     border-color:green;
 }
 
 .SpinBtn:hover{
-    padding:10px 10%;
-    font-size:13px;
-    border-radius:15px;
+    padding:20px 10%;
+    font-size:27px;
+    margin-bottom:-5px;
 }
 
 .SpinBtn:active{
@@ -29,66 +33,74 @@ body{
 }
 
 input[type ='number']{
+    padding:2px 2px 4px 10px;
     width:20%;
-    font-size: 20%;
+    line-height: 40px;
+    font-size: 200%;
+    font-family: inherit;
+    border-radius: 10px;
+    border:solid;
 }
 
 input[type = "text"]{
-    width:80%;
+    width:50%;
     margin-bottom: 0;
     border-width: 2px;
     border:solid;
     border-color:gray;
-    font-family:'Consolas';
+    font-size: 50px;
+    font-family: inherit;
     font-weight: bold;
 }
 
 .NumHeader{
     color:white;
-    font-size:8px;
-    font-family: 'Consolas';
+    font-size:20px;
     font-weight: bold;
-    margin-top:-20%;
-    margin-bottom:-100%;
     margin:0 0 0 0;
 }
 
 .DivisionsInputContainer{
-    margin-top:-40px;
-    margin-left:20%;
+    margin-top:-70px;
+    margin-left:25%;
+    list-style-type: none;
 }
 
 .InputList{
-    margin-top:-200px;
+    display:flex;
+    flex-flow: column wrap;
+    margin-top:-550px;
     margin-left:60%;
     position:absolute;
     z-index: 2;
 }
 
 .ChosenShower{
-    z-index:index 3;
+    z-index:3;
     position: absolute;
     width:30%;
     height:20%;
-    border-radius: 5px;
+    border:black;
+    border-radius: 15px;
     background-color: white;
     margin:-30% 35% 35% 35%;
-    display: none;
 }
 
 .ChosenText{
-    margin:10px 10px 0 10px;
+    margin:20px 10px 0 10px;
     text-align: center;
-    font-family: Consolas;
-    font-size: 10px;
+    font-size: 25px;
 }
 
 .OkBtn{
-    border-radius: 0 0 5px 5px;
+    border-radius: 0 0 15px 15px;
     color:black;
     width:100%;
+    border:none;
     height:35%;
-    font-size: 8px;
+    font-size: 22px;
+    font-family: inherit;
+    font-weight: inherit;
     border:none;
     margin:10% 0 0 0;
     background-color:blanchedalmond;
